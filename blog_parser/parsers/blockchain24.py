@@ -1,4 +1,5 @@
 from .parser_base import Parser
+from typing import Dict
 
 
 class BlockChain24(Parser):
@@ -7,5 +8,5 @@ class BlockChain24(Parser):
   BASE_URL = 'https://blockchain24.pro/'
   NEWS_URL = 'https://blockchain24.pro/ajax/more_articles.php?category=3387'
 
-  def parse(self) -> None:
+  async def parse(self, count: int) -> Dict[str, str]:
     pass
