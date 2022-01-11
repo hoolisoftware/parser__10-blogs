@@ -1,10 +1,10 @@
 from .requests_session import RequestsSession
-from typing import List
+from typing import Tuple
 
 
 class HyperVisor:
 
-  def __init__(self, parser_classes: List[object]) -> None:
+  def __init__(self, *parser_classes: Tuple[object]) -> None:
     self.parser_classes, self.parsers = parser_classes, None
     self.requests_session_class = RequestsSession()
 
