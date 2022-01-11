@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Sequence, AnyStr
+from typing import Sequence, AnyStr, Dict
 
 
 class Parser(ABC):
@@ -12,6 +12,6 @@ class Parser(ABC):
       self.requests_session, self.keywords = requests_session, keywords
 
   @abstractmethod
-  def parse(self) -> None:
+  def parse(self, count: int) -> Dict:
     ''' Method to parse news with the representation of JSON '''
     pass
