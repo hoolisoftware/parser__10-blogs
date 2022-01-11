@@ -14,6 +14,9 @@ class HyperVisor:
     self.requests_session_class = RequestsSession()
     self.keywords = keywords
 
+  async def close_requests_session(self) -> None:
+    await self.requests_session_class.close()
+
   async def initialize(self) -> None:
     requests_session = await self.requests_session_class.get_requests_session()
 
