@@ -34,8 +34,8 @@ class HyperVisor:
     return list(reduce(lambda a, x: a + x, results))
 
   def __get_load(self, total: int, count: int) -> List[int]:
-    devided = total // count
-    load = [devided] * count
+    divided = total // count
+    load = [divided] * count
 
     if total % count != 0:
       counter = -1
