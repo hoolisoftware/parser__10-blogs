@@ -12,6 +12,6 @@ class Parser(ABC):
       self.requests_session, self.keywords = requests_session, keywords
 
   @abstractmethod
-  def parse(self, count: int) -> Dict:
+  def parse(self, count: int) -> Dict[str, str]:
     ''' Method to parse news with the representation of JSON '''
     pass
