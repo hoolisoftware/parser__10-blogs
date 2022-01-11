@@ -3,6 +3,7 @@ from typing import Sequence, AnyStr, Tuple
 
 
 class HyperVisor:
+  ''' a Class for hypervisoring all parser modules '''
 
   def __init__(self, keywords: Sequence[AnyStr], *parser_classes: Tuple[object]) -> None:
     self.parser_classes, self.parsers = parser_classes, None

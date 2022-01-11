@@ -2,6 +2,8 @@ from typing import Sequence, AnyStr
 
 
 class BlockChain24:
+  ''' blockchain24.pro module '''
+
   BASE_URL = 'https://blockchain24.pro/'
   NEWS_URL = 'https://blockchain24.pro/ajax/more_articles.php?category=3387'
 

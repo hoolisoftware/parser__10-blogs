@@ -3,6 +3,7 @@ from fake_headers import Headers
 
 
 class RequestsSession:
+  ''' a Class for storing httpx.AsyncClient '''
 
   def __init__(self) -> None:
     self.requests_session: AsyncClient = None

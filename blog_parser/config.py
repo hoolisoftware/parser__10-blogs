@@ -1,3 +1,5 @@
+''' Edit the program params here '''
+
 KEYWORDS = [
   'bitcoin', 'биткоин',
   'etherium', 'эфир',
