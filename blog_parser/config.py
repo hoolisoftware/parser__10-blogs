@@ -9,3 +9,5 @@ KEYWORDS = [
   'gamefi', 'геймфи',
   'altcoin', 'альткоин'
 ]
+
+COUNT = 10
