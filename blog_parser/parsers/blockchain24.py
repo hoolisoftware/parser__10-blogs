@@ -1,5 +1,5 @@
 from .parser_base import Parser
-from typing import Dict, List
+from typing import List, Dict
 
 
 class BlockChain24(Parser):
