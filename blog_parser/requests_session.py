@@ -13,4 +13,4 @@ class RequestsSession:
     return self.requests_session
 
   async def close_requests_session(self) -> None:
-    await self.requests_session.close()
+    await self.requests_session.aclose()
