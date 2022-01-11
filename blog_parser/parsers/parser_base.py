@@ -17,6 +17,9 @@ class Parser(ABC):
     ''' Method to parse news with the representation of JSON '''
     pass
 
+  @abstractmethod
+  async def parse_article(self, url: str) -> Dict[str, str]:
+    pass
+
   def check_keywords(self, *texts: Tuple[str]) -> bool:
     return any([any(map(lambda keyword: keyword in text.lower(), self.keywords)) for text in texts])
-
