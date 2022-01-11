@@ -1,6 +1,6 @@
 from httpx import AsyncClient
 from abc import ABC, abstractmethod
-from typing import Sequence, AnyStr, List, Dict
+from typing import Sequence, AnyStr, List, Tuple, Dict
 
 
 class Parser(ABC):
@@ -16,3 +16,7 @@ class Parser(ABC):
   async def parse(self, count: int) -> List[Dict[str, str]]:
     ''' Method to parse news with the representation of JSON '''
     pass
+
+  def check_keywords(self, *texts: Tuple[str]) -> bool:
+    return any([any(map(lambda keyword: keyword in text.lower(), self.keywords)) for text in texts])
+

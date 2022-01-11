@@ -42,7 +42,7 @@ class BlockChain24(Parser):
 
     result = [
       self.BASE_URL + article.find(class_='articles__block-item--header').get('href')
-    for article in articles if self.__check_keywords(article.find(class_='articles__block-item--header').text, article.find(class_='article-short-info').text)]
+    for article in articles if self.check_keywords(article.find(class_='articles__block-item--header').text, article.find(class_='article-short-info').text)]
 
     return result, articles_count
 
@@ -57,6 +57,3 @@ class BlockChain24(Parser):
     result['date'] = parser.find(class_='article__info-date').text.strip()
 
     return result
-
-  def __check_keywords(self, *texts: Tuple[str]) -> bool:
-    return any([any(map(lambda keyword: keyword in text.lower(), self.keywords)) for text in texts])
