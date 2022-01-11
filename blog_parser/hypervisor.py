@@ -1,12 +1,13 @@
 from .requests_session import RequestsSession
-from typing import Tuple
+from typing import Sequence, AnyStr, Tuple
 
 
 class HyperVisor:
 
-  def __init__(self, *parser_classes: Tuple[object]) -> None:
+  def __init__(self, keywords: Sequence[AnyStr], *parser_classes: Tuple[object]) -> None:
     self.parser_classes, self.parsers = parser_classes, None
     self.requests_session_class = RequestsSession()
+    self.keywords = keywords
 
   async def initialize(self) -> None:
     requests_session = await self.requests_session_class.get_requests_session()
