@@ -1,12 +1,11 @@
-from typing import Sequence, AnyStr
+from .parser_base import Parser
 
 
-class BlockChain24:
+class BlockChain24(Parser):
   ''' blockchain24.pro module '''
 
   BASE_URL = 'https://blockchain24.pro/'
   NEWS_URL = 'https://blockchain24.pro/ajax/more_articles.php?category=3387'
 
-  def __init__(self, requests_session, keywords: Sequence[AnyStr]) -> None:
-      self.requests_session = requests_session
-      self.keywords = keywords
+  def parse(self) -> None:
+    pass
