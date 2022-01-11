@@ -14,5 +14,5 @@ class HyperVisor:
     requests_session = await self.requests_session_class.get_requests_session()
 
     self.parsers = [
-      parser_class(requests_session)
+      parser_class(requests_session, self.keywords)
     for parser_class in self.parser_classes]
