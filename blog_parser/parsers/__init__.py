@@ -4,5 +4,6 @@ from .take_profit import TakeProfit
 from .bitcointalk import BitcoinTalk
 from .cryptor import Cryptor
 from .happycoin import Happycoin
+from .ttrcoin import TtrCoin
 
-__all__ = (Parser, BlockChain24, TakeProfit, BitcoinTalk, Cryptor, Happycoin)
+__all__ = (Parser, BlockChain24, TakeProfit, BitcoinTalk, Cryptor, Happycoin, TtrCoin)
