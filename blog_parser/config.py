@@ -10,4 +10,4 @@ KEYWORDS = [
   'altcoin', 'альткоин'
 ]
 
-COUNT = 10
+COUNT = 50
