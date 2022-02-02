@@ -3,7 +3,7 @@ from ..utilities import sync_to_async
 
 import asyncio
 from bs4 import BeautifulSoup
-from typing import List, Tuple, Dict
+from typing import List, Dict
 
 
 class TakeProfit(Parser):
