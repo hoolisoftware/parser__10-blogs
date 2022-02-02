@@ -10,13 +10,16 @@ class BitcoinTalk(Parser):
   ''' news.bitcointalk.com module '''
 
   BASE_URL = 'https://news.bitcointalk.com'
-  NEWS_URL = 'https://news.bitcointalk.com/category/bitcoin/page/{page}/'
+  NEWS_URL = 'https://news.bitcointalk.com/category/bitcoin/'
+
+  def url(self, page: int) -> str:
+    return self.NEWS_URL if page == 1 else self.NEWS_URL + f'page/{page}/'
 
   async def parse(self, count: int) -> List[Dict[str, str]]:
-    articles_url, page = list(), 2
+    articles_url, page = list(), 1
 
     while len(articles_url) < count:
-      response = await self.requests_session.get(self.NEWS_URL.format(page=page))
+      response = await self.requests_session.get(self.url(page))
       html_code = response.text
 
       articles = await self.__parse_articles(html_code)
