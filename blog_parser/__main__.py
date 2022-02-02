@@ -5,14 +5,15 @@ from .parsers import (
   BlockChain24,
   TakeProfit,
   BitcoinTalk,
-  Cryptor
+  Cryptor,
+  Happycoin
 )
 
 import asyncio
 
 
 async def main() -> None:
-  hypervisor = HyperVisor(KEYWORDS, BlockChain24, TakeProfit, BitcoinTalk, Cryptor)
+  hypervisor = HyperVisor(KEYWORDS, BlockChain24, TakeProfit, BitcoinTalk, Cryptor, Happycoin)
   await hypervisor.initialize()
 
   result = await hypervisor.parse(COUNT)
