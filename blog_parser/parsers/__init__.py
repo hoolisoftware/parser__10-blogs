@@ -5,5 +5,6 @@ from .bitcointalk import BitcoinTalk
 from .cryptor import Cryptor
 from .happycoin import Happycoin
 from .ttrcoin import TtrCoin
+from .coinspot import CoinSpot
 
-__all__ = (Parser, BlockChain24, TakeProfit, BitcoinTalk, Cryptor, Happycoin, TtrCoin)
+__all__ = (Parser, BlockChain24, TakeProfit, BitcoinTalk, Cryptor, Happycoin, TtrCoin, CoinSpot)
