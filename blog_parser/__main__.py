@@ -28,11 +28,11 @@ async def run(hypervisor: HyperVisor, count: int) -> None:
 async def main() -> None:
   event_loop = asyncio.get_running_loop()
 
-  utc_h = datetime.utcnow().hour + 3
+  utc_h = datetime.utcnow().hour + 3  # Delta from UTC (Makes Moscow time if +3)
   now_h = datetime.now().hour
   delta = timedelta(hours=abs(utc_h - now_h))
 
-  runtime = datetime(year=2000, month=1, day=1, hour=8, minute=0) + delta
+  runtime = datetime(year=2000, month=1, day=1, hour=8, minute=0) + delta  # 08:00 no matter which timezone
   runtime = runtime.strftime('%H:%M')
 
   hypervisor = HyperVisor(KEYWORDS, BlockChain24, TakeProfit, BitcoinTalk, Cryptor, Happycoin, TtrCoin, CoinSpot)
