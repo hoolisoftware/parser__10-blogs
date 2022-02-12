@@ -9,6 +9,8 @@ from .parsers import (
   Happycoin,
   TtrCoin,
   CoinSpot,
+
+  # Unused ones
   Decrypt,
   CryptoPotato
 )
@@ -26,8 +28,6 @@ async def run(hypervisor: HyperVisor, count: int) -> None:
   
 
 async def main() -> None:
-  event_loop = asyncio.get_running_loop()
-
   utc_h = datetime.utcnow().hour + 3  # Delta from UTC (Makes Moscow time if +3)
   now_h = datetime.now().hour
   delta = timedelta(hours=abs(utc_h - now_h))
