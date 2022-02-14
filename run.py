@@ -3,9 +3,14 @@
 from blog_parser.parsers import *
 from blog_parser import KEYWORDS, HyperVisor
 
+import sys
 import asyncio
 
-COUNT = 1  # Count to parse
+try:
+  COUNT = int(sys.argv[1])
+except IndexError:
+  print('Specify count. ./run.py <count>')
+  sys.exit(0)
 
 
 async def main() -> None:
