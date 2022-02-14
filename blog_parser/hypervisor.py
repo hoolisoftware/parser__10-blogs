@@ -70,7 +70,7 @@ class HyperVisor:
 
       payload = {
         'title': article['title'].strip(),
-        'content': article['text'].strip(),
+        'content': ' '.join(article['text'].strip().replace('\n', ' ').split()),
         'status': 'draft'
       }
 
