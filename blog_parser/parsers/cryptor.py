@@ -54,5 +54,6 @@ class Cryptor(Parser):
     result['title'] = parser.find('h1', class_='page-header').text.strip()
     result['text'] = parser.find('article').text.split('\n')[:-1][0].strip()
     result['date'] = parser.find(class_='autordate').find('span').text.split(', ')[1].split(' - ')[0]
+    result['source'] = self.BASE_URL
 
     return result

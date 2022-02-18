@@ -54,5 +54,6 @@ class TakeProfit(Parser):
     result['title'] = parser.find('h1').text
     result['text'] = '\n'.join(text.text.strip() for text in parser.find(class_='single-text').find_all('p'))
     result['date'] = parser.find(class_='statistic-date').text.strip()
+    result['source'] = self.BASE_URL
 
     return result

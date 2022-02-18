@@ -55,5 +55,6 @@ class BlockChain24(Parser):
     result['title'] = parser.find(class_='article__header').text
     result['text'] = parser.find(class_='article__content').text.strip()
     result['date'] = parser.find(class_='article__info-date').text.strip()
+    result['source'] = self.BASE_URL
 
     return result

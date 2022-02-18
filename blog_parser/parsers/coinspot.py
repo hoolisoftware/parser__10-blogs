@@ -63,5 +63,6 @@ class CoinSpot(Parser):
     result['title'] = parser.find('h1').text.strip()
     result['text'] = '\n'.join(text.text.strip() for text in parser.find(class_='content-container').find('div').find_all('p', recursive=False)).strip()
     result['date'] = parser.find(class_='preview-box__info').text.strip()
+    result['source'] = self.BASE_URL
 
     return result

@@ -36,7 +36,8 @@ class Decrypt(Parser):
             'language': 'en',
             'title': self.decode(article['title']['rendered']),
             'text': self.decode(article['content']['rendered']),
-            'date': article['date']
+            'date': article['date'],
+            'source': self.BASE_URL
           })
 
       offset += offset_alter

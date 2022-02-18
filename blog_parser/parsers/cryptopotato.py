@@ -58,5 +58,6 @@ class CryptoPotato(Parser):
     result['title'] = parser.find('h1').text.strip()
     result['text'] = '\n'.join(text.text.strip() for text in parser.find(class_='coincodex-content').find_all('p', recursive=False))
     result['date'] = parser.find(class_='last-modified-timestamp').text.strip()
+    result['source'] = self.BASE_URL
 
     return result

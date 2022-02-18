@@ -57,5 +57,6 @@ class BitcoinTalk(Parser):
     result['title'] = parser.find('h1').text.strip()
     result['text'] = '\n\n'.join(parser.find(attrs={'data-td-block-uid': 'tdi_78'}).text.split('\n')[:-2]).strip()
     result['date'] = parser.find(class_='entry-date updated td-module-date').text.split(' | ')[1].strip()
+    result['source'] = self.BASE_URL
 
     return result

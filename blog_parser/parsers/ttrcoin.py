@@ -57,5 +57,6 @@ class TtrCoin(Parser):
     result['title'] = parser.find('h1').text.strip()
     result['text'] = parser.find('article', class_='post-entry').text.strip()
     result['date'] = parser.find(class_='post-item-data--span date').text.strip()
+    result['source'] = self.BASE_URL
 
     return result

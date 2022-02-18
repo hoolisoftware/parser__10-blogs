@@ -57,5 +57,6 @@ class Happycoin(Parser):
     result['title'] = parser.find('h1').text.strip()
     result['text'] = '\n'.join(text.text.strip() for text in parser.find(class_='single-post-content').find_all('p')).replace('Ваш адрес email не будет опубликован. Обязательные поля помечены *', '').replace('Редактор. Переводчик. Криптоинвестор.', '').strip()
     result['date'] = parser.find(class_='content-date date pull-left').text.split(' | ')[0].strip()
+    result['source'] = self.BASE_URL
 
     return result
